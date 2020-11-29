@@ -181,6 +181,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(PB4_GPIO_Port, PB4_Pin, 0);
+  HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, 0);
+  HAL_GPIO_WritePin(PC4_GPIO_Port, PC4_Pin, 1);
   lock_safe(); //initialize the safe
   current_state = STATE0; //set the initial state
   my_password[0]=2;
@@ -190,9 +193,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_WritePin(PB4_GPIO_Port, PB4_Pin, 0);
-	  HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, 0);
-	  HAL_GPIO_WritePin(PC4_GPIO_Port, PC4_Pin, 1);
+
 	  // Wait 500 millisecond
 	  if (HAL_GetTick()>marca){//Si ha pasado un milisegundo desde la ultima ejecucion
 		  input = controlador_keypad();

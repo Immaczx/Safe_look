@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  16 .debug_macro  000256f2  00000000  00000000  0002c0f0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00006ece  00000000  00000000  000517e2  2**0
+ 17 .debug_line   00006ed0  00000000  00000000  000517e2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000e817d  00000000  00000000  000586b0  2**0
+ 18 .debug_str    000e817d  00000000  00000000  000586b2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  0014082d  2**0
+ 19 .comment      0000007b  00000000  00000000  0014082f  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002328  00000000  00000000  001408a8  2**2
+ 20 .debug_frame  00002328  00000000  00000000  001408ac  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -437,36 +437,35 @@ int main(void)
   MX_USART2_UART_Init();
  8000528:	f000 f8b8 	bl	800069c <MX_USART2_UART_Init>
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(PB4_GPIO_Port, PB4_Pin, 0);
+ 800052c:	2200      	movs	r2, #0
+ 800052e:	2110      	movs	r1, #16
+ 8000530:	4819      	ldr	r0, [pc, #100]	; (8000598 <main+0x80>)
+ 8000532:	f001 f93b 	bl	80017ac <HAL_GPIO_WritePin>
+  HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, 0);
+ 8000536:	2200      	movs	r2, #0
+ 8000538:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 800053c:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
+ 8000540:	f001 f934 	bl	80017ac <HAL_GPIO_WritePin>
+  HAL_GPIO_WritePin(PC4_GPIO_Port, PC4_Pin, 1);
+ 8000544:	2201      	movs	r2, #1
+ 8000546:	2110      	movs	r1, #16
+ 8000548:	4814      	ldr	r0, [pc, #80]	; (800059c <main+0x84>)
+ 800054a:	f001 f92f 	bl	80017ac <HAL_GPIO_WritePin>
   lock_safe(); //initialize the safe
- 800052c:	f000 fcea 	bl	8000f04 <lock_safe>
+ 800054e:	f000 fcd9 	bl	8000f04 <lock_safe>
   current_state = STATE0; //set the initial state
- 8000530:	4b19      	ldr	r3, [pc, #100]	; (8000598 <main+0x80>)
- 8000532:	2200      	movs	r2, #0
- 8000534:	701a      	strb	r2, [r3, #0]
+ 8000552:	4b13      	ldr	r3, [pc, #76]	; (80005a0 <main+0x88>)
+ 8000554:	2200      	movs	r2, #0
+ 8000556:	701a      	strb	r2, [r3, #0]
   my_password[0]=2;
- 8000536:	4b19      	ldr	r3, [pc, #100]	; (800059c <main+0x84>)
- 8000538:	2202      	movs	r2, #2
- 800053a:	601a      	str	r2, [r3, #0]
-
-  /* Infinite loop */
+ 8000558:	4b12      	ldr	r3, [pc, #72]	; (80005a4 <main+0x8c>)
+ 800055a:	2202      	movs	r2, #2
+ 800055c:	601a      	str	r2, [r3, #0]
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_WritePin(PB4_GPIO_Port, PB4_Pin, 0);
- 800053c:	2200      	movs	r2, #0
- 800053e:	2110      	movs	r1, #16
- 8000540:	4817      	ldr	r0, [pc, #92]	; (80005a0 <main+0x88>)
- 8000542:	f001 f933 	bl	80017ac <HAL_GPIO_WritePin>
-	  HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, 0);
- 8000546:	2200      	movs	r2, #0
- 8000548:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 800054c:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
- 8000550:	f001 f92c 	bl	80017ac <HAL_GPIO_WritePin>
-	  HAL_GPIO_WritePin(PC4_GPIO_Port, PC4_Pin, 1);
- 8000554:	2201      	movs	r2, #1
- 8000556:	2110      	movs	r1, #16
- 8000558:	4812      	ldr	r0, [pc, #72]	; (80005a4 <main+0x8c>)
- 800055a:	f001 f927 	bl	80017ac <HAL_GPIO_WritePin>
+
 	  // Wait 500 millisecond
 	  if (HAL_GetTick()>marca){//Si ha pasado un milisegundo desde la ultima ejecucion
  800055e:	f000 fe51 	bl	8001204 <HAL_GetTick>
@@ -474,7 +473,7 @@ int main(void)
  8000564:	4b10      	ldr	r3, [pc, #64]	; (80005a8 <main+0x90>)
  8000566:	681b      	ldr	r3, [r3, #0]
  8000568:	429a      	cmp	r2, r3
- 800056a:	d9e7      	bls.n	800053c <main+0x24>
+ 800056a:	d9f8      	bls.n	800055e <main+0x46>
 		  input = controlador_keypad();
  800056c:	f000 fa6c 	bl	8000a48 <controlador_keypad>
  8000570:	4603      	mov	r3, r0
@@ -498,13 +497,13 @@ int main(void)
  800058e:	4602      	mov	r2, r0
  8000590:	4b05      	ldr	r3, [pc, #20]	; (80005a8 <main+0x90>)
  8000592:	601a      	str	r2, [r3, #0]
-	  HAL_GPIO_WritePin(PB4_GPIO_Port, PB4_Pin, 0);
- 8000594:	e7d2      	b.n	800053c <main+0x24>
+	  if (HAL_GetTick()>marca){//Si ha pasado un milisegundo desde la ultima ejecucion
+ 8000594:	e7e3      	b.n	800055e <main+0x46>
  8000596:	bf00      	nop
- 8000598:	20000275 	.word	0x20000275
- 800059c:	20000008 	.word	0x20000008
- 80005a0:	48000400 	.word	0x48000400
- 80005a4:	48000800 	.word	0x48000800
+ 8000598:	48000400 	.word	0x48000400
+ 800059c:	48000800 	.word	0x48000800
+ 80005a0:	20000275 	.word	0x20000275
+ 80005a4:	20000008 	.word	0x20000008
  80005a8:	2000024c 	.word	0x2000024c
  80005ac:	20000276 	.word	0x20000276
 

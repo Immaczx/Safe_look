@@ -3562,19 +3562,19 @@ OUTPUT(Safe_Lock.elf elf32-littlearm)
  .debug_macro   0x0000000000025307      0x1fb Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o
  .debug_macro   0x0000000000025502      0x1f0 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
 
-.debug_line     0x0000000000000000     0x6ece
- .debug_line    0x0000000000000000      0xa03 Core/Src/main.o
- .debug_line    0x0000000000000a03      0x6f1 Core/Src/stm32l4xx_hal_msp.o
- .debug_line    0x00000000000010f4      0x766 Core/Src/stm32l4xx_it.o
- .debug_line    0x000000000000185a      0x6ed Core/Src/system_stm32l4xx.o
- .debug_line    0x0000000000001f47       0x87 Core/Startup/startup_stm32l476rgtx.o
- .debug_line    0x0000000000001fce      0x964 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o
- .debug_line    0x0000000000002932      0x9eb Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o
- .debug_line    0x000000000000331d      0x87e Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o
- .debug_line    0x0000000000003b9b      0xa77 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o
- .debug_line    0x0000000000004612      0x9da Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o
- .debug_line    0x0000000000004fec      0xc70 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o
- .debug_line    0x0000000000005c5c     0x1272 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
+.debug_line     0x0000000000000000     0x6ed0
+ .debug_line    0x0000000000000000      0xa05 Core/Src/main.o
+ .debug_line    0x0000000000000a05      0x6f1 Core/Src/stm32l4xx_hal_msp.o
+ .debug_line    0x00000000000010f6      0x766 Core/Src/stm32l4xx_it.o
+ .debug_line    0x000000000000185c      0x6ed Core/Src/system_stm32l4xx.o
+ .debug_line    0x0000000000001f49       0x87 Core/Startup/startup_stm32l476rgtx.o
+ .debug_line    0x0000000000001fd0      0x964 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o
+ .debug_line    0x0000000000002934      0x9eb Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.o
+ .debug_line    0x000000000000331f      0x87e Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.o
+ .debug_line    0x0000000000003b9d      0xa77 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.o
+ .debug_line    0x0000000000004614      0x9da Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.o
+ .debug_line    0x0000000000004fee      0xc70 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.o
+ .debug_line    0x0000000000005c5e     0x1272 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.o
 
 .debug_str      0x0000000000000000    0xe817d
  .debug_str     0x0000000000000000    0xe5b49 Core/Src/main.o
