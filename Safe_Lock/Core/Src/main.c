@@ -196,8 +196,10 @@ int main(void)
 	  // Wait 500 millisecond
 	  if (HAL_GetTick()>marca){//Si ha pasado un milisegundo desde la ultima ejecucion
 		  input = controlador_keypad();
-		  //input = read_keypad();
+		  if(input!='F')
+		  {
 		  contr_password(input);
+		  }
 		  marca=HAL_GetTick();  //Almacene el tiempo actual
 	  }
     /* USER CODE END WHILE */
